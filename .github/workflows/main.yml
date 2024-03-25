@@ -19,7 +19,7 @@ jobs:
             password: ${{ secrets. DOCKER_PASSWORD }}
 
         - name: Build Docker image
-          run: docker build -t shadowhub/raz:latest
+          run: docker build -t shadowhub/raz:latest .
 
         - name: Tag Docker image
           run: |
