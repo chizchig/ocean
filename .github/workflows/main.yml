@@ -49,4 +49,4 @@ jobs:
 
     - name: Run Skaffold
       run: |
-        skaffold run || skaffold init
+        skaffold run || skaffold init --skip-prompts
