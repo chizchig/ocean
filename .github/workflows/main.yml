@@ -42,17 +42,11 @@ jobs:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       run: echo "$KUBE_CONFIG_DATA" | base64 -d > $HOME/.kube/config
 
-    - name: Set up AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
-
     - name: Install Skaffold
       run: |
         curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
         sudo install skaffold /usr/local/bin/
 
-    - name: Deploy to EKS with Skaffold
-      run: skaffold run
+    - name: Run Skaffold
+      run: |
+        skaffold run || skaffold init
