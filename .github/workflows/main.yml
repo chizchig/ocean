@@ -49,7 +49,7 @@ jobs:
 
     - name: Initialize Skaffold
       run: |
-        skaffold init --force
+        echo "N\nN" | skaffold init --force 
 
     - name: Run Skaffold
       run: |
