@@ -49,11 +49,7 @@ jobs:
 
     - name: Initialize Skaffold
       run: |
-        skaffold init <<EOF
-        N
-        N
-        y
-        EOF
+        skaffold init -qf
 
     - name: Run Skaffold
       run: |
