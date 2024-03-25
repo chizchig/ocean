@@ -51,13 +51,16 @@ jobs:
         run: |
           python3 - << EOF
           import subprocess
-          
-          # Perform Skaffold initialization
-          init_command = "echo -e 'N\nN\ny' | skaffold init"
-          subprocess.run(init_command, shell=True)
-          
-          # Confirm Skaffold initialization
-          print("Skaffold initialization completed. Review the skaffold.yaml file if needed.")
-          input("Press [Enter] to continue and run 'skaffold run'...")
-          subprocess.run("skaffold run", shell=True)
-          EOF
+
+            # Perform Skaffold initialization
+            init_command = "echo -e 'N\nN\ny' | skaffold init"
+            subprocess.run(init_command, shell=True)
+
+            # Confirm Skaffold initialization
+            print("Skaffold initialization completed. Review the skaffold.yaml file if needed.")
+            input("Press [Enter] to continue and run 'skaffold run'...")
+
+            # Automatically press Enter
+            subprocess.run("echo", shell=True)
+            )
+                    EOF
