@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Record and Geolocation App</title>
+</head>
+<body>
+    <h2>Driving Record Input</h2>
+    <form id="recordForm">
+        <label for="driverName">Driver's Name:</label>
+        <input type="text" id="driverName" name="driverName" required>
+        <br><br>
+        <label for="recordDetails">Record Details:</label>
+        <textarea id="recordDetails" name="recordDetails" rows="4" cols="50" required></textarea>
+        <br><br>
+        <button type="submit">Submit Record</button>
+    </form>
+
+    <h2>Current Location</h2>
+    <button id="getLocationBtn">Get Current Location</button>
+    <p id="locationDisplay">Location will be displayed here.</p>
+
+    <script src="app.js"></script>
+</body>
+</html>

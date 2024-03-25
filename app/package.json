@@ -1,0 +1,17 @@
+{
+  "name": "stingray",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "author": "Dennar C.",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
