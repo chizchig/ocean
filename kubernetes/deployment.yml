@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: raz-container
-        image: rar
+        image: shadowhub/raz:$(date +%Y%m%d_%H%M%S)
         imagePullPolicy: IfNotPresent
         ports: 
         - containerPort: 8080
