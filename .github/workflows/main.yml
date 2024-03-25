@@ -5,7 +5,7 @@ on:
     branches:
       - master
 
-jobs: 
+jobs:
   deploy:
     runs-on: ubuntu-latest
 
@@ -49,25 +49,10 @@ jobs:
 
     - name: Initialize Skaffold
       run: |
-        python3 - <<'EOF'
-        from subprocess import Popen, PIPE
+        skaffold init
 
-        # Command to execute
-        command = "skaffold init"
-
-        # Input to provide to skaffold init
-        input_data = b"N\nN\ny\n"
-
-        # Execute the command
-        with Popen(command.split(), stdout=PIPE, stdin=PIPE, stderr=PIPE) as process:
-            # Provide input to the process
-            output, error = process.communicate(input=input_data)
-
-        # Print the output and error
-        print(output.decode())
-        print(error.decode())
-        EOF
-
-    - name: Run Skaffold
+    - name: Confirm Skaffold Initialization
       run: |
-        skaffold run 
+        echo "Skaffold initialization completed. Review the skaffold.yaml file if needed."
+        read -p "Press [Enter] to continue and run 'skaffold run'..."
+        skaffold run
